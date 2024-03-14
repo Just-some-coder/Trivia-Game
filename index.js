@@ -1,4 +1,4 @@
-const apiURL = "https://opentdb.com/api.php?amount=10";
+const apiURL = "https://opentdb.com/api.php?amount=50";
 const URL ='https://jsonplaceholder.typicode.com/users/1';
 class Question{
     constructor(data) {
@@ -35,15 +35,23 @@ fetchData();
 
 function setOptions(ques){
     document.querySelector('#option1').innerHTML = ques.correct;
+
+    document.querySelector('#option3').style.display = "grid";
+    document.querySelector('#option4').style.display = "grid";
+
     console.log(ques.incorrect);
     for(let i = 0;i<3;i++){
         document.querySelector('#option'+(i+2)).innerHTML = ques.incorrect[i];
     }
-    if(ques.incorrect.size === 1){
-        document.querySelector('#option2').style.display = 'none';
-        document.querySelector('#option3').style.display = 'none';
-        document.querySelector('#option4').style.display = 'none';
+    if(ques.incorrect[0]==="True" || ques.incorrect[0]==="False"){
+        document.querySelector('#option1').innerHTML = "True";
+        document.querySelector('#option2').innerHTML = "False";
+
+        document.querySelector('#option3').style.display = "none";
+        document.querySelector('#option4').style.display = "none";
+
     }
+
 }
 function handleData() {
     let ques = new Question(testData[index]);
