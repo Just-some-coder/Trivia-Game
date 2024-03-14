@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        h2{
+            color: red;
+        }
+        #options{
+            display: grid;
+        }
+
+        button{
+            width: fit-content;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Question: </h2>
+    <h3 id = "ques"></h3>
+
+    <h2>Category: </h2>
+    <h3 id = "cate"></h3>
+
+    <h2>Difficulty: </h2>
+    <h3 id = "diff"></h3>
+
+    <h2>Options: </h2>
+    <div id="options">
+        <button id="option1"></button><br>
+        <button id="option2"></button><br>
+        <button id="option3"></button><br>
+        <button id="option4"></button><br>
+    </div>
+    <br><br>
+    <button id = "next" onclick = goNext() >Next Question</button>
+
+</body>
+<script src="index.js"></script>
+</html>
