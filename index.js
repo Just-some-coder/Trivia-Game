@@ -1,5 +1,13 @@
 const apiURL = "https://opentdb.com/api.php?amount=50";
 const URL ='https://jsonplaceholder.typicode.com/users/1';
+
+let score = 0;
+updateScore();
+
+function updateScore(){
+    document.querySelector('#score').innerHTML = ('Score:'+score);
+}
+
 class Question{
     constructor(data) {
         this.difficulty = data.difficulty;
@@ -61,6 +69,17 @@ function handleData() {
     document.querySelector('#cate').innerHTML = ques.category;
 
     setOptions(ques);
-
-
 }
+
+function correctAnswer(){
+    alert("Correct Answer");
+    score++;
+    updateScore();
+}
+
+function wrongAnswer(){
+    alert("Wrong Answer");
+}
+
+
+

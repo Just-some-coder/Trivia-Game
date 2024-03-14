@@ -20,25 +20,32 @@
     </style>
 </head>
 <body>
+    <section>
+        <div id="questionBox">
+            <h2>Question: </h2>
+            <h3 id = "ques"></h3>
 
-    <h2>Question: </h2>
-    <h3 id = "ques"></h3>
+            <h2>Category: </h2>
+            <h3 id = "cate"></h3>
 
-    <h2>Category: </h2>
-    <h3 id = "cate"></h3>
+            <h2>Difficulty: </h2>
+            <h3 id = "diff"></h3>
 
-    <h2>Difficulty: </h2>
-    <h3 id = "diff"></h3>
+            <h2>Options: </h2>
+            <div id="options">
+                <button id="option1" onclick="correctAnswer();goNext()"></button><br>
+                <button id="option2" onclick="goNext();wrongAnswer()"></button><br>
+                <button id="option3" onclick="goNext();wrongAnswer()"></button><br>
+                <button id="option4" onclick="goNext();wrongAnswer()"></button><br>
+            </div>
+            <br><br>
+            <button id = "next" onclick = goNext() >Next Question</button>
+        </div>
 
-    <h2>Options: </h2>
-    <div id="options">
-        <button id="option1"></button><br>
-        <button id="option2"></button><br>
-        <button id="option3"></button><br>
-        <button id="option4"></button><br>
-    </div>
-    <br><br>
-    <button id = "next" onclick = goNext() >Next Question</button>
+        <div>
+            <h3 id = "score">Score:</h3>
+        </div>
+    </section>
 
 </body>
 <script src="index.js"></script>
