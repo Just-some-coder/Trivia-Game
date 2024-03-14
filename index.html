@@ -12,10 +12,18 @@
         }
         #options{
             display: grid;
+            margin-bottom: 0;
         }
 
         button{
             width: fit-content;
+        }
+
+        #optionValidation{
+            color: red;
+            opacity: 0;
+            margin: 1rem 0 1rem 0;
+            padding: 0;
         }
     </style>
 </head>
@@ -33,12 +41,15 @@
 
             <h2>Options: </h2>
             <div id="options">
-                <button id="option1" onclick="correctAnswer();goNext()"></button><br>
-                <button id="option2" onclick="goNext();wrongAnswer()"></button><br>
-                <button id="option3" onclick="goNext();wrongAnswer()"></button><br>
-                <button id="option4" onclick="goNext();wrongAnswer()"></button><br>
+                <button id="option1" onclick="correctAnswer()"></button><br>
+                <button id="option2" onclick="wrongAnswer()"></button><br>
+                <button id="option3" onclick="wrongAnswer()"></button><br>
+                <button id="option4" onclick="wrongAnswer()"></button><br>
             </div>
             <br><br>
+            <div >
+                <h3 id="optionValidation">test</h3>
+            </div>
             <button id = "next" onclick = goNext() >Next Question</button>
         </div>
 

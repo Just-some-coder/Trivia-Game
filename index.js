@@ -22,14 +22,19 @@ let index = 0;
 let testData;
 function goNext(){
     index++;
-    handleData();
+    setTimeout(handleData,3000);
+    setTimeout(test = () =>{
+        let validationElement = document.querySelector('#optionValidation');
+        validationElement.style.opacity = "0";
+    },3000);
+
 }
 function fetchData() {
     fetch(apiURL, {})
         .then(response => response.json())
 
         .then(data => {
-            console.log(data.results);
+            // console.log(data.results);
             testData = data.results;
             handleData();
         })
@@ -46,8 +51,8 @@ function setOptions(ques){
 
     document.querySelector('#option3').style.display = "grid";
     document.querySelector('#option4').style.display = "grid";
-
-    console.log(ques.incorrect);
+    //
+    // console.log(ques.incorrect);
     for(let i = 0;i<3;i++){
         document.querySelector('#option'+(i+2)).innerHTML = ques.incorrect[i];
     }
@@ -72,13 +77,25 @@ function handleData() {
 }
 
 function correctAnswer(){
-    alert("Correct Answer");
+    let validationElement = document.querySelector('#optionValidation');
+    validationElement.innerHTML = "Correct Answer";
+    validationElement.style.opacity = "100";
+    validationElement.style.color = '#00ff00';
+    console.log(validationElement.innerHTML);
+
     score++;
     updateScore();
+    goNext();
 }
 
 function wrongAnswer(){
-    alert("Wrong Answer");
+    let validationElement = document.querySelector('#optionValidation');
+    validationElement.innerHTML = "Incorrect Answer";
+    validationElement.style.opacity = "100";
+    validationElement.style.color = '#ff0000';
+    console.log(validationElement.innerHTML);
+    goNext();
+
 }
 
 
