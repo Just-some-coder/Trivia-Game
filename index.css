@@ -90,3 +90,16 @@ button:hover {
 #score{
   border-bottom: 0;
 }
+
+#logo{
+  position: fixed;
+  top:2rem;
+  left:39rem;
+  border-radius: 2rem;
+}
+
+#logo img{
+  color: white;
+  width: 6rem;
+  height: 4rem;
+}
