@@ -92,7 +92,7 @@ button:hover {
 }
 
 #logo{
-  position: fixed;
+  position: absolute;
   top:2rem;
   left:39rem;
   border-radius: 2rem;
