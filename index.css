@@ -83,12 +83,14 @@ button:hover {
   top: 2rem;
   left: calc(50% - 3rem); /* Centering the logo */
   border-radius: 2rem;
+  display:none;
 }
 
 #logo img {
   color: white;
   width: 6rem;
   height: 4rem;
+  display:none;
 }
 
 /* Media Query for smartphones */
