@@ -8,7 +8,7 @@ function updateScore(){
 }
 
 function showCorrect(){
-    document.querySelector('#option1').style.background = "#00ff00";
+    document.querySelector('#option1').style.background = "#00aa00";
 
     document.querySelector('#option2').style.background = "#ff0000";
 
@@ -19,13 +19,11 @@ function showCorrect(){
 }
 
 function hideCorrect(){
-    document.querySelector('#option1').style.background = "#cccccc";
-
-    document.querySelector('#option2').style.background = "#cccccc";
-
-    document.querySelector('#option3').style.background = "#cccccc";
-
-    document.querySelector('#option4').style.background = "#cccccc";
+    document.querySelector('#option1').style.background = '#007bff';
+    document.querySelector('#option2').style.background = '#007bff';
+    document.querySelector('#option3').style.background = '#007bff';
+    document.querySelector('#option4').style.background = '#007bff';
+    document.querySelector('#next').style.background = '#007bff';
 }
 
 function disableOptions(){
@@ -33,7 +31,9 @@ function disableOptions(){
     document.querySelector('#option2').disabled = true;
     document.querySelector('#option3').disabled = true;
     document.querySelector('#option4').disabled = true;
-    document.querySelector('#next').disabled = true;
+
+    setTimeout(showCorrect,0);
+
     console.log("Disabled");
 }
 
@@ -43,6 +43,11 @@ function enableOptions(){
     document.querySelector('#option3').disabled = false;
     document.querySelector('#option4').disabled = false;
     document.querySelector('#next').disabled = false;
+
+
+
+    setTimeout(hideCorrect,0);
+
     console.log("Enabled");
 }
 class Question{
@@ -122,7 +127,7 @@ function correctAnswer(){
     let validationElement = document.querySelector('#optionValidation');
     validationElement.innerHTML = "Correct Answer";
     validationElement.style.opacity = "100";
-    validationElement.style.color = '#00ff00';
+    validationElement.style.color = '#00aa00';
     console.log(validationElement.innerHTML);
 
     score++;
