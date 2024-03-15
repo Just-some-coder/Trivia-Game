@@ -19,11 +19,11 @@ function showCorrect(){
 }
 
 function hideCorrect(){
-    document.querySelector('#option1').style.background = '#007bff';
-    document.querySelector('#option2').style.background = '#007bff';
-    document.querySelector('#option3').style.background = '#007bff';
-    document.querySelector('#option4').style.background = '#007bff';
-    document.querySelector('#next').style.background = '#007bff';
+    document.querySelector('#option1').style.background = '#3498db';
+    document.querySelector('#option2').style.background = '#3498db';
+    document.querySelector('#option3').style.background = '#3498db';
+    document.querySelector('#option4').style.background = '#3498db';
+    document.querySelector('#next').style.background = '#3498db';
 }
 
 function disableOptions(){
