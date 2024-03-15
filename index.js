@@ -1,13 +1,50 @@
 const apiURL = "https://opentdb.com/api.php?amount=50";
-const URL ='https://jsonplaceholder.typicode.com/users/1';
 
 let score = 0;
-updateScore();
+
 
 function updateScore(){
     document.querySelector('#score').innerHTML = ('Score:'+score);
 }
 
+function showCorrect(){
+    document.querySelector('#option1').style.background = "#00ff00";
+
+    document.querySelector('#option2').style.background = "#ff0000";
+
+    document.querySelector('#option3').style.background = "#ff0000";
+
+    document.querySelector('#option4').style.background = "#ff0000";
+
+}
+
+function hideCorrect(){
+    document.querySelector('#option1').style.background = "#cccccc";
+
+    document.querySelector('#option2').style.background = "#cccccc";
+
+    document.querySelector('#option3').style.background = "#cccccc";
+
+    document.querySelector('#option4').style.background = "#cccccc";
+}
+
+function disableOptions(){
+    document.querySelector('#option1').disabled = true;
+    document.querySelector('#option2').disabled = true;
+    document.querySelector('#option3').disabled = true;
+    document.querySelector('#option4').disabled = true;
+    document.querySelector('#next').disabled = true;
+    console.log("Disabled");
+}
+
+function enableOptions(){
+    document.querySelector('#option1').disabled = false;
+    document.querySelector('#option2').disabled = false;
+    document.querySelector('#option3').disabled = false;
+    document.querySelector('#option4').disabled = false;
+    document.querySelector('#next').disabled = false;
+    console.log("Enabled");
+}
 class Question{
     constructor(data) {
         this.difficulty = data.difficulty;
@@ -22,11 +59,14 @@ let index = 0;
 let testData;
 function goNext(){
     index++;
-    setTimeout(handleData,3000);
+    setTimeout(enableOptions,1500);
+    setTimeout(handleData,1500);
     setTimeout(test = () =>{
         let validationElement = document.querySelector('#optionValidation');
         validationElement.style.opacity = "0";
-    },3000);
+    },1500);
+
+
 
 }
 function fetchData() {
@@ -43,7 +83,7 @@ function fetchData() {
             console.log(error);
         })
 }
-fetchData();
+
 
 
 function setOptions(ques){
@@ -77,6 +117,8 @@ function handleData() {
 }
 
 function correctAnswer(){
+    setTimeout(disableOptions,0);
+
     let validationElement = document.querySelector('#optionValidation');
     validationElement.innerHTML = "Correct Answer";
     validationElement.style.opacity = "100";
@@ -85,18 +127,37 @@ function correctAnswer(){
 
     score++;
     updateScore();
+
     goNext();
 }
 
 function wrongAnswer(){
+
+    setTimeout(disableOptions,0);
+
     let validationElement = document.querySelector('#optionValidation');
     validationElement.innerHTML = "Incorrect Answer";
     validationElement.style.opacity = "100";
     validationElement.style.color = '#ff0000';
-    console.log(validationElement.innerHTML);
-    goNext();
+
+    setTimeout(goNext,0);
 
 }
+
+function skipQuestion(){
+
+    setTimeout(disableOptions,0);
+    let validationElement = document.querySelector('#optionValidation');
+    validationElement.innerHTML = "Question Skipped";
+    validationElement.style.opacity = "100";
+    validationElement.style.color = '#000000';
+
+    setTimeout(goNext,0);
+
+}
+
+updateScore();
+fetchData();
 
 
 
