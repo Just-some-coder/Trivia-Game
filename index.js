@@ -94,7 +94,7 @@ function fetchData() {
 function setOptions(ques){
     document.querySelector('#option1').innerHTML = ques.correct;
 
-    document.querySelector('#option3').style.display = "grid";
+    document.querySelector('#option1').style.display = "grid";
     document.querySelector('#option4').style.display = "grid";
     //
     // console.log(ques.incorrect);
@@ -102,10 +102,10 @@ function setOptions(ques){
         document.querySelector('#option'+(i+2)).innerHTML = ques.incorrect[i];
     }
     if(ques.incorrect[0]==="True" || ques.incorrect[0]==="False"){
-        document.querySelector('#option1').innerHTML = "True";
-        document.querySelector('#option2').innerHTML = "False";
+        document.querySelector('#option2').innerHTML = "True";
+        document.querySelector('#option3').innerHTML = "False";
 
-        document.querySelector('#option3').style.display = "none";
+        document.querySelector('#option1').style.display = "none";
         document.querySelector('#option4').style.display = "none";
 
     }

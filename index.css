@@ -12,7 +12,8 @@ body {
 }
 
 section {
-  max-width: 800px;
+  width: 600px;
+  height: 800px;
   margin: 0 auto;
   text-align: center;
   background-color: #fff;
@@ -23,6 +24,8 @@ section {
 
 #questionBox {
   margin-bottom: 2rem;
+  text-align: center;
+  justify-content: space-between;
 }
 
 h2 {
@@ -35,6 +38,15 @@ h3 {
   color: #333;
   font-size: 1.2rem;
   margin-bottom: 1rem;
+  width: 600px;
+  height:50px;
+  text-align: center;
+
+  border-bottom: #888888 solid 0.12rem;
+}
+
+#optionsHeading{
+  margin-bottom: 2rem;
 }
 
 #options {
@@ -59,7 +71,7 @@ button:hover {
 #optionValidation {
   color: #f00;
   font-size: 1.2rem;
-  margin-bottom: 1rem;
+  margin: 0;
 }
 
 #next {
@@ -69,4 +81,12 @@ button:hover {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-top:0.5rem;
+  margin-bottom: -0.5rem;
+  position: relative;
+
+}
+
+#score{
+  border-bottom: 0;
 }
